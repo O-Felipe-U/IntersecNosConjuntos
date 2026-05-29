@@ -9,6 +9,7 @@ public class meuteste
 {
     public static void main(String args[])
     {
-
+        No testeNo = new No(10);
+        System.out.println("" + testeNo);
     }
 }

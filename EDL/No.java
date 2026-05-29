@@ -17,7 +17,6 @@ public class No
         setItem(Conteudo);
         setNext(null);
         setAnte(null);
-        
     }
 
     public int getItem()
