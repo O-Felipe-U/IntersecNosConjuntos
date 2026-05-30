@@ -17,9 +17,9 @@ public class No
         setItem(Conteudo);
         setNext(null);
         setAnte(null);
-        
     }
 
+    //parte dos Getters e setters
     public int getItem()
     {
         return this.item;
@@ -50,6 +50,7 @@ public class No
         this.ante = q;
     }
     
+    //Metodo toString para garantir que nao saia o endereço do No
     public String toString()
     {
         return ""+ getItem();
