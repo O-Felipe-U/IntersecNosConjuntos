@@ -4,6 +4,22 @@ import javax.swing.event.DocumentEvent; //Botao nao clicavel
 import javax.swing.event.DocumentListener; //Botao nao clicavel
 
 public class InterfaceGrafica{
+
+    //Func para transformar o conjunto dado em Numeros
+    public static Conjunto transfTextConj(String texto){
+        Conjunto conj = new Conjunto();
+        String[] partes = texto.split(","); //Tira Virgula
+
+        for (String parte : partes){ //mn é pra cada pedaço de partes faz algo
+            String numText = parte.trim(); //Tira os espaços
+            int num = Integer.parseInt(numText); //Transforma em num
+
+            conj.adicionar(num);
+        }
+
+        return conj;
+    }
+
     public static void main(String[] args) {
         JFrame janela = new JFrame("Conjuntos");
 
