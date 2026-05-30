@@ -11,5 +11,11 @@ public class meuteste
     {
         No testeNo = new No(10);
         System.out.println("" + testeNo);
+        
+        IListaLigada Lista = new ListaDuplamenteLigada();
+    
+        
     }
+
+
 }

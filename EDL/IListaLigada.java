@@ -14,5 +14,12 @@ public interface IListaLigada
      * @param  y    exemplo de um parâmetro de método
      * @return        o resultado produzido pelo sampleMethod 
      */
-    int sampleMethod(int y);
+    No getInicio();
+    No getFim();
+    
+    void setInicio(No inicio);
+    void setFim(No fim);
+
+    No inserirInicio(int Item);
+
 }
