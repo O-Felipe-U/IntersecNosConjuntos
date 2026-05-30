@@ -81,4 +81,46 @@ public class Conjunto implements IConjunto{
         System.out.println();
     }
 
+    public Conjunto interseccao(Conjunto um, Conjunto dois)
+    {
+        Conjunto resultado = new Conjunto();
+
+        if (um.conjuntinho.getInicio() == null) {
+            return resultado;
+        }
+
+        No aux = um.conjuntinho.getInicio();
+
+        do {
+            if (dois.contem(aux.getItem())) {
+                resultado.adicionar(aux.getItem());
+            }
+            aux = aux.getNext();
+        } while (aux != um.conjuntinho.getInicio());
+
+        return resultado;
+    }
+
+    public Conjunto uniao(Conjunto um, Conjunto dois)
+    {
+        Conjunto resultado = new Conjunto();
+
+        if (um.conjuntinho.getInicio() != null) {
+            No aux1 = um.conjuntinho.getInicio();
+            do {
+                resultado.adicionar(aux1.getItem());
+                aux1 = aux1.getNext();
+            } while (aux1 != um.conjuntinho.getInicio());
+        }
+
+        if (dois.conjuntinho.getInicio() != null) {
+            No aux2 = dois.conjuntinho.getInicio();
+            do {
+                resultado.adicionar(aux2.getItem());
+                aux2 = aux2.getNext();
+            } while (aux2 != dois.conjuntinho.getInicio());
+        }
+
+        return resultado;
+    }
 }
