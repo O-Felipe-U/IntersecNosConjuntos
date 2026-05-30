@@ -21,7 +21,7 @@ public class InterfaceGrafica{
     }
 
     public static void main(String[] args) {
-        JFrame janela = new JFrame("Conjuntos");
+        JFrame janela = new JFrame("Conjuntos de Numeros");
 
         janela.setSize(500, 450); //tamanho
         janela.setLocationRelativeTo(null); //Posicao
@@ -123,14 +123,22 @@ public class InterfaceGrafica{
 
 
         //Acoes Botoes
-        btnInter.addActionListener(e ->{
+        btnInter.addActionListener(e -> {
+            Conjunto la = transfTextConj(campoConjunto1.getText());
+            Conjunto lb = transfTextConj(campoConjunto2.getText());
+
+            Conjunto operador = new Conjunto();
+            Conjunto resultado = operador.interseccao(la, lb);
+
             tituloResult.setVisible(true);
             conjResult.setVisible(true);
+
             btnUni.setVisible(false);
             btnInter.setVisible(false);
             refazer.setVisible(true);
 
             tituloResult.setText("Resultado da Intersecção");
+            conjResult.setText(resultado.toString());
         });
 
         btnUni.addActionListener(e -> {
