@@ -5,7 +5,7 @@
  * @author (seu nome) 
  * @version (um número da versão ou uma data)
  */
-public class ListaDuplamenteLigada
+public class ListaDuplamenteLigada implements IListaLigada
 {
     No inicio;
     No fim;
@@ -19,6 +19,7 @@ public class ListaDuplamenteLigada
         this.qtdNos = 0;
     }
     
+
     public No getInicio()
     {
         return this.inicio;
@@ -29,6 +30,12 @@ public class ListaDuplamenteLigada
         return this.fim;
     }
     
+    public int getQtdNos()
+    {
+        return this.qtdNos;        
+    }
+
+
     public void setInicio(No i)
     {
         this.inicio = i;
@@ -54,4 +61,7 @@ public class ListaDuplamenteLigada
         }
         return t;
     }
+
 }
+
+
