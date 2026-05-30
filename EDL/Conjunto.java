@@ -9,7 +9,7 @@ public class Conjunto implements IConjunto{
 
     public void adicionar(int item)
     {
-        if (!conjuntinho.jatem(item)) {
+        if (!conjuntinho.jaTem(item)) {
 
             No novo = new No(item);
 
@@ -63,7 +63,7 @@ public class Conjunto implements IConjunto{
 
     public boolean contem(int item)
     {
-        return conjuntinho.jatem(item);
+        return conjuntinho.jaTem(item);
     }
 
     public void mostrar()
