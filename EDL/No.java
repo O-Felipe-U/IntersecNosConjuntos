@@ -1,10 +1,4 @@
 
-/**
- * Escreva uma descrição da classe No aqui.
- * 
- * @author (seu nome) 
- * @version (um número da versão ou uma data)
- */
 public class No
 {
     private int item;
@@ -53,6 +47,6 @@ public class No
     //Metodo toString para garantir que nao saia o endereço do No
     public String toString()
     {
-        return ""+ getItem();
+        return (" "+ getItem());
     }
 }

@@ -46,72 +46,20 @@ public class ListaDuplamenteLigada implements IListaLigada
         this.fim = f;
     }
 
-    public void setQtdNos(int q)
+    //verifica se o item que querem adicionar ja esta na lista
+    public boolean jaTem(int item)
     {
-        this.qtdNos = q;
-    }
-    
+        boolean t = false;
+        if(inicio != null) {
 
-    public void mostrarLista()
-    {
-        No Ap;
-
-        //eu so mostro se a Lista nao for vazia 
-        if(getInicio() != null)
-        {
-            System.out.print(" [ ");
-            Ap = getInicio();
-            do{ 
-                System.out.print(" " + Ap.getItem());
-                 
-                Ap = Ap.getNext();
-
-            }while(Ap != null);
-            System.out.print(" ] \n");    
+            No aux = inicio;
+            do {
+                if (aux.getItem() == item) t = true;
+                aux = aux.getNext();
+            } while (aux != inicio && !t);
+            return t;
         }
-        else
-        {
-            System.out.println("Lista Vazia");
-        }
-
-    }
-
-    
-
-    //ele pra adicionar tem q me passar o inicio da Lista
-    public No inserirInicio(int Item)
-    {
-        //como eu adiciono em uma ListaDuplamenteLigada?
-
-        //coloco meu conteudo na memoria alocada
-        No Celula = new No(Item);
-        
-        //setando meu novo inicio
-        Celula.setNext(getInicio());
-        
-        //setando como null pq o primeiro nao possui anterior
-        Celula.setAnte(null);
-
-        //se meu tiver alguma coisa, significa que tenho q alterar meu anterior da proxima Celula
-        if(getInicio() != null)
-        { 
-            getInicio().setAnte(Celula);
-        }
-        else 
-        {
-            //caso seja meu primeiro item - Lista Vazia
-            setFim(Celula);
-        }
-
-        //altero meu novo Inicio para Localizacao da Celula
-        setInicio(Celula);
-
-        setQtdNos(getQtdNos() + 1);
-    
-        //por questao de eficiencia, retornar celula é mais rapido do que retornar o inicio da Lista, 
-        // pois o inicio da Lista tem q acessar a Celula para retornar o item
-
-        return Celula;
+        return t;
     }
 
 }

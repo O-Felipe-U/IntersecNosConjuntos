@@ -1,32 +1,36 @@
 
-/**
- * Escreva uma descrição da classe meuteste aqui.
- * 
- * @author (seu nome) 
- * @version (um número da versão ou uma data)
- */
 public class meuteste
 {
     public static void main(String args[])
     {
-        
-         //-------------------------------------------------
-        No testeNo = new No(10);
-        System.out.println("" + testeNo);
-        
-       
-        
-        //-------------------------------------------------
-         IListaLigada Lista = new ListaDuplamenteLigada();
-        Lista.inserirInicio(10);
-        Lista.inserirInicio(3);
-        Lista.inserirInicio(2);
-        Lista.mostrarLista();
+        Conjunto resultado = new Conjunto();
+        Conjunto la = new Conjunto();
+        Conjunto lc = new Conjunto();
 
-        //-------------------------------------------------
-        System.out.println("\nFim da Lista: " + Lista.getFim());
-        System.out.println("\nInicio da Lista: " + Lista.getInicio());
-    
+        lc.adicionar(1);
+        lc.adicionar(2);
+        lc.adicionar(31);
+        lc.adicionar(29);
+        lc.adicionar(67);
+        lc.adicionar(49);
+        System.out.println("Conjunto C:");
+        lc.mostrar();
+
+        la.adicionar(1);
+        la.adicionar(7);
+        la.adicionar(29);
+        la.adicionar(49);
+        System.out.println("Conjunto A:");
+        la.mostrar();
+
+        System.out.println("Resultado da interseccao de A e C:");
+        resultado = resultado.interseccao(lc, la);
+        resultado.mostrar();
+
+
+        System.out.println("Resultado da uniao de A e C:");
+        resultado = resultado.uniao(lc, la);
+        resultado.mostrar();
     }
 
 
