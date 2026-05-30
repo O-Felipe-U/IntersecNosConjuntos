@@ -1,10 +1,4 @@
 
-/**
- * Escreva uma descrição da classe No aqui.
- * 
- * @author (seu nome) 
- * @version (um número da versão ou uma data)
- */
 public class No
 {
     private int item;

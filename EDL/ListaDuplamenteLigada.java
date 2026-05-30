@@ -41,8 +41,22 @@ public class ListaDuplamenteLigada
     
     public void inserirInicio()
     {
-        
-    
-    
+
+    }
+
+    //verifica se o item que querem adicionar ja esta na lista
+    public boolean jatem(int item)
+    {
+        boolean t = false;
+        if(inicio != null) {
+
+            No aux = inicio;
+            do {
+                if (aux.getItem() == item) t = true;
+                aux = aux.getNext();
+            } while (aux != inicio && !t);
+            return false;
+        }
+        return t;
     }
 }
