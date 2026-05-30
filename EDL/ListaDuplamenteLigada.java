@@ -36,7 +36,7 @@ public class ListaDuplamenteLigada
     
     public void setFim(No f)
     {
-        this.inicio = f;
+        this.fim = f;
     }
     
     public void inserirInicio()
@@ -55,7 +55,7 @@ public class ListaDuplamenteLigada
                 if (aux.getItem() == item) t = true;
                 aux = aux.getNext();
             } while (aux != inicio && !t);
-            return false;
+            return t;
         }
         return t;
     }
