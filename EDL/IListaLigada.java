@@ -16,10 +16,10 @@ public interface IListaLigada
      */
     No getInicio();
     No getFim();
-    
+
     void setInicio(No inicio);
     void setFim(No fim);
 
     No inserirInicio(int Item);
-
+    void mostrarLista();
 }

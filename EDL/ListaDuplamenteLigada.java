@@ -43,7 +43,7 @@ public class ListaDuplamenteLigada implements IListaLigada
     
     public void setFim(No f)
     {
-        this.inicio = f;
+        this.fim = f;
     }
 
     public void setQtdNos(int q)
@@ -51,11 +51,32 @@ public class ListaDuplamenteLigada implements IListaLigada
         this.qtdNos = q;
     }
     
+
     public void mostrarLista()
     {
+        No Ap;
 
-        
+        //eu so mostro se a Lista nao for vazia 
+        if(getInicio() != null)
+        {
+            System.out.print(" [ ");
+            Ap = getInicio();
+            do{ 
+                System.out.print(" " + Ap.getItem());
+                 
+                Ap = Ap.getNext();
+
+            }while(Ap != null);
+            System.out.print(" ] \n");    
+        }
+        else
+        {
+            System.out.println("Lista Vazia");
+        }
+
     }
+
+    
 
     //ele pra adicionar tem q me passar o inicio da Lista
     public No inserirInicio(int Item)
@@ -92,4 +113,7 @@ public class ListaDuplamenteLigada implements IListaLigada
 
         return Celula;
     }
+
 }
+
+
