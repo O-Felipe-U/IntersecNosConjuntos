@@ -88,14 +88,12 @@ public class InterfaceGrafica{
         btnInter.setFont(new Font("Comic Sans MS", Font.BOLD, 20)); //Comic Sans Hell Yeah
         btnInter.setForeground(Color.BLACK); //Cor da fonte do Botao
         btnInter.setPreferredSize(new Dimension(150, 50)); //Box respeita MaximusSize Flow respeita PreferredSize
-        btnInter.setEnabled(false);
 
         JButton btnUni = new JButton("União"); //Nome do meu Botao
         btnUni.setBackground(Color.GREEN); //Cor do botao Verde
         btnUni.setFont(new Font("Comic Sans MS", Font.BOLD, 20)); //Comic Sans Hell Yeah
         btnUni.setForeground(Color.BLACK); //Cor da fonte do Botao
         btnUni.setPreferredSize(new Dimension(150, 50));
-        btnUni.setEnabled(false);
 
         JButton refazer = new JButton("Refazer");
         refazer.setBackground(Color.GREEN); //Cor do botao Verde
@@ -135,15 +133,22 @@ public class InterfaceGrafica{
             tituloResult.setText("Resultado da Intersecção");
         });
 
-        btnUni.addActionListener(e ->{
+        btnUni.addActionListener(e -> {
+            Conjunto la = transfTextConj(campoConjunto1.getText());
+            Conjunto lb = transfTextConj(campoConjunto2.getText());
+
+            Conjunto operador = new Conjunto();
+            Conjunto resultado = operador.uniao(la, lb);
+
             tituloResult.setVisible(true);
             conjResult.setVisible(true);
+
             btnUni.setVisible(false);
             btnInter.setVisible(false);
             refazer.setVisible(true);
 
             tituloResult.setText("Resultado da União");
-
+            conjResult.setText(resultado.toString());
         });
 
         refazer.addActionListener(e ->{

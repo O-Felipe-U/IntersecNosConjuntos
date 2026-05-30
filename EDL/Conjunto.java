@@ -123,4 +123,28 @@ public class Conjunto implements IConjunto{
 
         return resultado;
     }
+
+    public String toString() {
+        if (conjuntinho.getInicio() == null) {
+            return "{}";
+        }
+
+        String texto = "{";
+        No aux = conjuntinho.getInicio();
+
+        do {
+            texto += aux.getItem();
+
+            aux = aux.getNext();
+
+            if (aux != conjuntinho.getInicio()) {
+                texto += ", ";
+            }
+
+        } while (aux != conjuntinho.getInicio());
+
+        texto += "}";
+
+        return texto;
+    }
 }
